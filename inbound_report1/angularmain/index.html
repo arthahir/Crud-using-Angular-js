@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Inbound-Report</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+<script src="https://rawgithub.com/eligrey/FileSaver.js/master/FileSaver.js" type="text/javascript"></script>
+<script src="js/script.js"></script>
+<script type="text/javascript" src="js/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="js/ngDatepicker.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/ngDatepicker.css">
+</head>
+<body>
+<div class="wrapper">
+<div class="header">
+<div class="innerheader">
+<p>INBOUND ~ FOE ~</p>
+<p class="links">
+<a href="../reportlog.php">Home</a>
+<a class="delete" href="#liveuser">Live user</a>
+<a href="../sess.php?aa=logout"><i class='fa fa-share-square-o' aria-hidden='true'></i>Logout</a>
+</p>
+</div><!--------------------End of innerheader-------------->
+</div><!--------------------End of header------------------->
+<div class="content"  ng-app="myApp" ng-controller="appdataenter">
+
+<div class="innercontent">
+<!--<div class="formblk">
+<a href="#display">ADD DID</a>
+</div><!--------------------End of formblk------------------>
+<div class="datatodisplay">	
+<input type="button" value="BM CHEN-1" ng-click="connectmylocation(1)"/>
+<div ng-view></div>
+</div><!--------------------End of datatodisplay------------>
+</div><!--------------------End of innercontent------------->
+</div><!--------------------End of content------------------>
+<div class="footer">
+<div class="innerfooter">
+
+<p>Copyrights &copy; 2016.</p>
+
+</div><!--------------------End of innerfooter-------------->
+
+</div><!--------------------End of footer------------------->
+</div><!--------------------End of wrapper------------------>
+</body>
+</html>
+

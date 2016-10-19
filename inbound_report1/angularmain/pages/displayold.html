@@ -1,0 +1,43 @@
+<table class="data" cellspacing="0" cellpadding="0">
+<tr>
+<th>Channel ID</th>
+<th>Channel name</th>
+<th>DID</th>
+<th>Update</th>
+<th>Delete</th>
+<th>Action</th>
+</tr>
+<tr ng-repeat="x in names">
+<td>{{ x.sno }}</td>
+<td>{{ x.name }}</td>
+<td>{{ x.course }}</td>
+<td><a href="#update/{{x.sno}}/{{x.name}}/{{x.course}}/{{x.id}}" class="update">Update</a></td>
+<td><input type="button" value="Delete" class="delete" ng-click="deletedata(x.id)"/></td>
+<td>
+<div class="checkbox">
+<input type="checkbox" ng-model="mycheckbox" ng-change="checkClick(x.id, mycheckbox)" ng-checked="{{ x.status == 1 ? true : false }}" id="check{{x.id}}"/>
+<label for="check{{x.id}}"></label>
+</div>
+</td>
+</tr>
+</table>
+<br>
+<a class="add" href="#adddid">Add</a>
+<div class="overlay" ng-hide="displaypop">
+<div class="overblk">
+<div class="overhead">
+<p>Warning</p>
+<span ng-click="close()"><i class="fa fa-times" aria-hidden="true"></i></span>
+<div class="clear"></div>
+</div><!--------------------End of overhead----------------->
+<div class="overbody">
+<br>
+<br>
+<p>Are you sure you want to delete?</p>
+<br>
+<br>
+<input type="button" value="Yes" class="add" ng-click="accept()"/>
+<input type="button" value="No" class="delete" ng-click="close()"/>
+</div><!--------------------End of overbody----------------->
+</div><!--------------------End of overblk------------------>
+</div><!--------------------End of overlay------------------>

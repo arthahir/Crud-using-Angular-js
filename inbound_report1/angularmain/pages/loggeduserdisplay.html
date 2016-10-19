@@ -1,0 +1,41 @@
+<p class="head">Users Login & Logout Status</p>
+<div class="selectblk">
+<p class="blk2">
+<label>Select Campaign</label>
+<select name="campaignselect" id="campaignselect" ng-model="team"  ng-change="change()" ng-options="dat.name for dat in data track by dat.id">
+</select>
+</p>
+<p class="blk1" ng-show="mystatus">
+<ng-datepicker ng-model="fromdate" first-week-day-sunday="true" placeholder="Pick a date">
+</ng-datepicker>
+</p>
+<p class="blk1">
+<input type="button" value="Submit" ng-click="submitdata({ team: 'team', fromdate: 'fromdate' })"/>
+</p>
+</div>
+<div id="exportable">
+<table class="datalog" cellspacing="0" cellpadding="0">
+<tr>
+<th>User</th>
+<th>Logged In</th>
+<th>Logged out</th>
+<th>Duration</th>
+<th>Status</th>
+</tr>
+
+<tr ng-repeat="x in names">
+<td><p>{{ x.agent }} </p></td>
+<td>{{ x.login }}</td>
+<td>{{ x.logout }}</td>
+<td>{{ x.duration }}</td>
+<td><b ng-show="{{ x.status == 'loggedOut' ? 'true' : 'false' }}" ng-style="logout"><i class='fa fa-sign-out' aria-hidden='true'></i></b><b ng-hide="{{ x.status == 'loggedOut' ? 'true' : 'false' }}" ng-style="logout"><i class="fa fa-times-circle" aria-hidden="true"></i></b></td>
+</tr>
+
+</table>
+</div>
+<br>
+
+<input type="button" value="Export" ng-click="exportData()" />
+<br/>
+
+

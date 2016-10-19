@@ -1,0 +1,39 @@
+<p class="head">Users Login & Logout Status</p>
+<div class="selectblk">
+<p class="blk2">
+<label>Select Campaign</label>
+<select name="campaignselect" id="campaignselect" ng-model="team"  ng-change="change()" ng-options="dat.name for dat in data track by dat.id">
+</select>
+</p>
+<p class="blk1" ng-show="mystatus">
+<ng-datepicker ng-model="fromdate" first-week-day-sunday="true" placeholder="Pick a date">
+</ng-datepicker>
+</p>
+<p class="blk1">
+<input type="button" value="Submit" ng-click="submitdata({ team: 'team', fromdate: 'fromdate' })"/>
+</p>
+</div>
+<div id="exportable">
+<table class="datalog" cellspacing="0" cellpadding="0">
+<tr>
+<th>User</th>
+<th>Answered</th>
+<th>Missedcall</th>
+<th>Callback</th>
+</tr>
+
+<tr ng-repeat="x in names">
+<td><p>{{ x.queue_exten }} </p></td>
+<td>{{ x.answered }}</td>
+<td>{{ x.missed }}</td>
+<td>{{ x.duration }}</td>
+</tr>
+
+</table>
+</div>
+<br>
+
+<input type="button" value="Export" ng-click="exportData()" />
+<br/>
+
+

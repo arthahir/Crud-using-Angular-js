@@ -1,0 +1,17 @@
+<p class="head">Live Users</p>
+<table class="datam" cellspacing="0" cellpadding="0">
+<tr>
+<th>User</th>
+<th>Live</th>
+<th>Paused</th>
+<th>LoggedIn</th>
+</tr>
+<tr ng-repeat="x in names">
+<td>{{ x.agent }}</td>
+<td><p  ng-style="{{ x.penalty == 'Available' ? mystyle : mystylen }}">{{ x.penalty }}</p></td>
+<td>{{ x.paused }}</td>
+<td>{{ x.time }}</td>
+</tr>
+</table>
+<p class="timerdata">{{secondsn}}</p>
+
